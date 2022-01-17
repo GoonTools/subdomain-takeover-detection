@@ -5,7 +5,7 @@ import requests
 from multiprocessing import Pool
 from subfinder_rewrite import subfinder
 
-FINGERPRINTS_FILE = "fingerprints.json
+FINGERPRINTS_FILE = "fingerprints.json"
 f = open(FINGERPRINTS_FILE, 'r')
 fingerprints = json.loads(f.read())
 
