@@ -10,6 +10,8 @@ f = open(FINGERPRINTS_FILE, 'r')
 fingerprints = json.loads(f.read())
 
 def fingerprint_domain(domain):
+	#Certain websites will only serve to port 443, not 80.
+	#if port 80 is open, do not request https, it will redirect
 	for url in [f"http://{domain}", f"https://{domain}"]:
 		try: 
 			response = requests.get(url,  timeout=3)
